@@ -56,7 +56,7 @@ validity <- readr::read_csv("validity.csv")
 #show block: set par(leading: 0.65em)
 #block[
 *CASE NUMBER:* {{< var case_number >}} \
-*PATIENT NAME:* #name, Age 68 \
+*PATIENT NAME:* #name, Age XX \
 *DATE OF EXAM:* {{< var doe1 >}} \
 *DATE OF REPORT:* {{< var doe2 >}} \
 ]
