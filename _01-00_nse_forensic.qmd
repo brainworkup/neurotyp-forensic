@@ -2,7 +2,7 @@
 
 ## Notification/Informed Consent
 
- {{< var first_name >}} {{< var last_name >}} consented to undergo the current neuropsychological evaluation. {{< var he_she_cap >}} was informed nothing we discussed would remain confidential, and information {{< var he_she >}} provided during our meetings and the test results from my evaluation of {{< var him_her >}} would become a part of my report, to be used at {{< var his_her >}} attorney's discretion. {{< var he_she_cap >}} was informed a copy of any report I produced would be sent to {{< var his_her >}} attorney, possibly to the prosecuting attorney, and to the court. {{< var mr_mrs >}} {{< var last_name >}} indicated having understood the purpose of the evaluation and the limitations of confidentiality of our interviews and the testing I conducted.
+{{< var first_name >}} {{< var last_name >}} consented to undergo the current neuropsychological evaluation. {{< var he_she_cap >}} was informed nothing we discussed would remain confidential, and information {{< var he_she >}} provided during our meetings and the test results from my evaluation of {{< var him_her >}} would become a part of my report, to be used at {{< var his_her >}} attorney's discretion. {{< var he_she_cap >}} was informed a copy of any report I produced would be sent to {{< var his_her >}} attorney, possibly to the prosecuting attorney, and to the court. {{< var mr_mrs >}} {{< var last_name >}} indicated having understood the purpose of the evaluation and the limitations of confidentiality of our interviews and the testing I conducted.
 
 On {{< var doe1 >}}, I conducted a clinical interview with {{< var mr_mrs >}} {{< var last_name >}}, {{< var first_name >}} {{< var last_name >}}'s biological mother, via a HIPAA-compliant telehealth platform, gathering data on {{< var his_her >}} developmental, medical, and psychosocial histories. The following day, I performed an in-person neuropsychological and psychodiagnostic evaluation of {{< var mr_mrs >}} {{< var last_name >}}, which lasted approximately eight hours.
 
@@ -10,12 +10,7 @@ This report is based on a review of available information contained in medical r
 
 ## Reason for Referral
 
-{{< var first_name >}} {{< var last_name >}} is a {{< var age >}}-year-old, {{< var handedness >}}-handed {{< var sex >}} with {{< var education >}} years of education. {{< var he_she_cap >}} was referred for forensic examination to elucidate the nature and extent of
-neurocognitive sequelae stemming from a history of attention-deficit/hyperactivity disorder (ADHD). The purpose of
-this evaluation was to identify or rule-out any objectively-derived
-neurocognitive impairments in {{< var mr_mrs >}} {{< var last_name >}}. This process is necessary in
-determining whether {{< var mr_mrs >}} {{< var last_name >}}'s atypical neurocognitive development and
-impoverished psychosocial upbringing were contributing factors in XYZ.
+{{< var first_name >}} {{< var last_name >}} is a {{< var age >}}-year-old, {{< var handedness >}}-handed {{< var sex >}} with {{< var education >}} years of education. {{< var he_she_cap >}} was referred for forensic examination to elucidate the nature and extent of neurocognitive sequelae stemming from a history of attention-deficit/hyperactivity disorder (ADHD). The purpose of this evaluation was to identify or rule-out any objectively-derived neurocognitive impairments in {{< var mr_mrs >}} {{< var last_name >}}. This process is necessary in determining whether {{< var mr_mrs >}} {{< var last_name >}}'s atypical neurocognitive development and impoverished psychosocial upbringing were contributing factors in XYZ.
 
 ## Forensic Case Formulation
 
@@ -28,7 +23,6 @@ Labore aute ullamco non eu consequat consequat incididunt sit sunt enim excepteu
 Esse est fugiat id aliquip laborum voluptate deserunt sit nulla velit. Esse sunt occaecat consectetur incididunt ad eiusmod culpa. Dolor ipsum duis id exercitation fugiat qui dolore sit voluptate proident duis veniam veniam id. Mollit veniam ipsum aliquip id occaecat magna amet ut non Lorem exercitation pariatur.
 
 Occaecat labore ea proident. Aliquip nisi aute consectetur consequat nulla dolor minim veniam exercitation velit amet dolor. Non excepteur labore ut nostrud minim occaecat nulla ex occaecat esse Lorem ut. Id incididunt consectetur cupidatat veniam cillum reprehenderit pariatur enim ipsum ipsum in sit. Officia aliquip esse cupidatat.
-
 
 ## Relevant History
 
