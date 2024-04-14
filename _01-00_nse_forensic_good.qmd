@@ -1,11 +1,10 @@
 ## Reason for Referral
 
-{{< var first_name >}}  {{< var last_name >}}  is a {{< var age >}}-year-old {{< var sex >}}  referred for evaluation. The Sheriff's Department
-arrested {{< var mr_mrs >}} {{< var last_name >}} and charged him with one felony count of X (Penal Code X).
+{{< var first_name >}} {{< var last_name >}} is a {{< var age >}}-year-old {{< var sex >}} referred for evaluation. The Sheriff's Department arrested {{< var mr_mrs >}} {{< var last_name >}} and charged {{< var him_her >}} with one felony count of X (Penal Code X).
 
 ## Background
 
-{{< var mr_mrs >}} {{< var last_name >}}  has no prior criminal record and does not use drugs or alcohol. His medical/psychiatric history is marked by significant episodes of major depression, anxiety, and trauma. These conditions have been exacerbated by a series of traumatic events. In 2018, {{< var mr_mrs >}}   {{< var last_name >}}  experienced a left-sided cerebral hemorrhagic stroke, which has had ongoing effects on his mobility, cognitive abilities, and emotional regulation. His business partner years at his practice in <<CITY>> expressed concern about a potential diagnosis of bipolar disorder and declined to continue their professional partnership due to perceived risks to patient safety following {{< var mr_mrs >}}   {{< var last_name >}} 's stroke. More recently, {{< var mr_mrs >}}   {{< var last_name >}}  has been facing additional stressors in the form of property management issues, tenant conflicts, and personal safety concerns.
+{{< var mr_mrs >}} {{< var last_name >}}  has no prior criminal record and does not use drugs or alcohol. His medical/psychiatric history is marked by significant episodes of major depression, anxiety, and trauma. These conditions have been exacerbated by a series of traumatic events. In 2018, {{< var mr_mrs >}} {{< var last_name >}} experienced a left-sided cerebral hemorrhagic stroke, which has had ongoing effects on his mobility, cognitive abilities, and emotional regulation. His business partner years at his practice in <<CITY>> expressed concern about a potential diagnosis of bipolar disorder and declined to continue their professional partnership due to perceived risks to patient safety following {{< var mr_mrs >}} {{< var last_name >}}'s stroke. More recently, {{< var mr_mrs >}} {{< var last_name >}} has been facing additional stressors in the form of property management issues, tenant conflicts, and personal safety concerns.
 
 ## Mental Status/Behavioral Observations
 
