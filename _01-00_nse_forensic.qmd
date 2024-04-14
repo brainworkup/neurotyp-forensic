@@ -2,13 +2,13 @@
 
 ## Notification/Informed Consent
 
-Biggie Smalls consented to undergo the current neuropsychological evaluation. {{< var he_she_cap >}} was informed nothing we discussed would remain confidential, and information {{< var he_she >}} provided during our meetings and the test results from my evaluation of him would become a part of my report, to be used at {{< var his_her >}} attorney's discretion. {{< var he_she_cap >}} was informed a copy of any report I produced would be sent to {{< var his_her >}} attorney, possibly to the prosecuting attorney, and to the court. Mr. Smalls indicated having understood the purpose of the evaluation and the limitations of confidentiality of our interviews and the testing I conducted.
+ {{< var first_name >}}  {{< var last_name >}}  consented to undergo the current neuropsychological evaluation. {{< var he_she_cap >}} was informed nothing we discussed would remain confidential, and information {{< var he_she >}} provided during our meetings and the test results from my evaluation of him would become a part of my report, to be used at {{< var his_her >}} attorney's discretion. {{< var he_she_cap >}} was informed a copy of any report I produced would be sent to {{< var his_her >}} attorney, possibly to the prosecuting attorney, and to the court. {{< var mr_mrs >}} {{< var last_name >}} indicated having understood the purpose of the evaluation and the limitations of confidentiality of our interviews and the testing I conducted.
 
-On MM DD, YYYY, I conducted a clinical interview with Mrs. Smalls, Biggie Smalls's biological mother, via a HIPAA-compliant telehealth platform, gathering data on {{< var his_her >}} developmental, medical, and psychosocial histories. The following day, I performed an in-person neuropsychological and psychodiagnostic evaluation of Mr. Smalls, which lasted approximately eight hours.
+On MM DD, YYYY, I conducted a clinical interview with {{< var mr_mrs >}} {{< var last_name >}}, {{< var first_name >}} {{< var last_name >}}'s biological mother, via a HIPAA-compliant telehealth platform, gathering data on {{< var his_her >}} developmental, medical, and psychosocial histories. The following day, I performed an in-person neuropsychological and psychodiagnostic evaluation of {{< var mr_mrs >}} {{< var last_name >}}, which lasted approximately eight hours.
 
 This report is based on a review of available information contained in medical
-records and criminal records, as well as interviews with Mr. Smalls, {{< var his_her >}} mother
-Mrs. Smalls, attorney XX, and information
+records and criminal records, as well as interviews with {{< var mr_mrs >}} {{< var last_name >}}, {{< var his_her >}} mother
+{{< var mr_mrs >}} {{< var last_name >}}, attorney XX, and information
 gathered during multiple days of evaluation. I reserve the right to change my
 opinions about the following should I be provided additional records that alter
 my understanding of the findings. Please note my current employer, Keck School
@@ -17,19 +17,18 @@ the patient was referred to me by {{< var his_her >}} attorney's office.
 
 ## Reason for Referral
 
-Biggie Smalls is a XX-year-old, left-handed male with XX years of education. {{< var he_she_cap >}}
-was referred for forensic examination to elucidate the nature and extent of
+{{< var first_name >}} {{< var last_name >}} is a {{< var age >}}-year-old, {{< var handedness >}}-handed {{< var sex >}} with {{< var education >}} years of education. {{< var he_she_cap >}} was referred for forensic examination to elucidate the nature and extent of
 neurocognitive sequelae stemming from a history of attention-deficit/hyperactivity disorder (ADHD). The purpose of
 this evaluation was to identify or rule-out any objectively-derived
-neurocognitive impairments in Mr. Smalls. This process is necessary in
-determining whether Mr. Smalls's atypical neurocognitive development and
+neurocognitive impairments in {{< var mr_mrs >}} {{< var last_name >}}. This process is necessary in
+determining whether {{< var mr_mrs >}} {{< var last_name >}}'s atypical neurocognitive development and
 impoverished psychosocial upbringing were contributing factors in XYZ.
 
 ## Forensic Case Formulation
 
 Nulla fugiat ea voluptate laboris minim eu. Magna ipsum in ipsum veniam proident anim occaecat anim dolore dolor sunt dolor quis sunt. Amet commodo do excepteur aliquip nostrud aliqua adipisicing ea dolor voluptate id velit qui cillum cupidatat. Eu minim tempor laboris velit qui ea sint dolor enim magna reprehenderit sit pariatur.
 
-## Background Information
+## Background
 
 Labore aute ullamco non eu consequat consequat incididunt sit sunt enim excepteur ex aute aute. Ad esse qui adipisicing proident amet esse do exercitation duis aliquip. Ea quis exercitation aliqua. Consectetur do adipisicing ex est pariatur voluptate ad. Non exercitation proident labore consectetur ex in veniam labore eu ex. Duis id id irure voluptate magna.
 

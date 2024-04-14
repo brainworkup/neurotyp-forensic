@@ -1,11 +1,11 @@
 ## Reason for Referral
 
-Biggie Smalls is a XX-year-old XX referred for evaluation. The LA County Sheriff's Department
-arrested Mr.  Smalls and charged him with one felony count of X (Penal Code X).
+{{< var first_name >}}  {{< var last_name >}}  is a {{< var age >}}-year-old {{< var sex >}}  referred for evaluation. The Sheriff's Department
+arrested {{< var mr_mrs >}} {{< var last_name >}} and charged him with one felony count of X (Penal Code X).
 
 ## Background
 
-Mr.  Smalls has no prior criminal record and does not use drugs or alcohol. His medical/psychiatric history is marked by significant episodes of major depression, anxiety, and trauma. These conditions have been exacerbated by a series of traumatic events, including a severe automobile accident during his medical school years. This accident led to the amputation of his right leg below the knee and necessitated the use of a prosthetic limb. In 2018, Mr.  Smalls experienced a left-sided cerebral hemorrhagic stroke, which has had ongoing effects on his mobility, cognitive abilities, and emotional regulation. His colleague and business partner of 26 years at his medical practice in <<CITY>> expressed concern about a potential diagnosis of bipolar disorder and declined to continue their professional partnership due to perceived risks to patient safety following Mr.  Smalls's stroke. More recently, Mr.  Smalls has been facing additional stressors in the form of property management issues, tenant conflicts, and personal safety concerns.
+{{< var mr_mrs >}} {{< var last_name >}}  has no prior criminal record and does not use drugs or alcohol. His medical/psychiatric history is marked by significant episodes of major depression, anxiety, and trauma. These conditions have been exacerbated by a series of traumatic events. In 2018, {{< var mr_mrs >}}   {{< var last_name >}}  experienced a left-sided cerebral hemorrhagic stroke, which has had ongoing effects on his mobility, cognitive abilities, and emotional regulation. His business partner years at his practice in <<CITY>> expressed concern about a potential diagnosis of bipolar disorder and declined to continue their professional partnership due to perceived risks to patient safety following {{< var mr_mrs >}}   {{< var last_name >}} 's stroke. More recently, {{< var mr_mrs >}}   {{< var last_name >}}  has been facing additional stressors in the form of property management issues, tenant conflicts, and personal safety concerns.
 
 ## Mental Status/Behavioral Observations
 
@@ -17,7 +17,7 @@ from fleeting and instantaneous crying (multiple times during exam) to instantan
 inappropriate laughing (also multiple times). Denies suicidal and homicidal ideation.
 - **Thought Process:** Rapid, unrelated thoughts; no delusions or hallucinations.
 - **Speech/Language:** Pressured, disorganized, and difficult to understand at
-times. Mathematical analysis indicated Mr.  Smalls spoke 81% of the time during our
+times. Mathematical analysis indicated {{< var mr_mrs >}} {{< var last_name >}}  spoke 81% of the time during our
 2+ hour exam, whereas I only spoke 19% of the time.
 - **Insight and Judgment:** Shows insight into condition, improved but
 previously poor judgment. Utilizes meditative activities, such as tending
@@ -26,23 +26,11 @@ plants, as coping mechanisms.
 
 ## Summary/Impression
 
-The actions leading to the arrest were atypical for Mr.  Smalls and appears
-influenced by heightened anxiety, complex life stressors, and historical
-traumatic experiences, rather than any predisposition towards aggression. His
-action to display a firearm under threat suggests a lapse in judgment
-rather than aggressive or impulsive behavior. He struggles with emotional
-distress, especially related to health and family matters, indicating chronic
-mood concerns.
+The actions leading to the arrest were atypical for {{< var mr_mrs >}} {{< var last_name >}} and appears influenced by heightened anxiety, complex life stressors, and historical traumatic experiences, rather than any predisposition towards aggression. His action to display a firearm under threat suggests a lapse in judgment rather than aggressive or impulsive behavior. He struggles with emotional distress, especially related to health and family matters, indicating chronic mood concerns.
 
-Mr.  Smalls meets DSM-5 criteria for conditions directly impacting cognitive,
-emotional, and behavioral functioning, contributing to the incident. He expresses fear of being perceived as aggressive, emphasizing that his actions
-were motivated by fear and anxiety rather than anger. He has participated in
-anger management, demonstrating awareness of his need to regulate his emotional
-responses. Further, Mr.  Smalls's stroke history impacts his mobility and potentially his
-sense of vulnerability. He reflects on familial and cultural influences affecting his
-perceptions and decisions around self-defense.
+{{< var mr_mrs >}} {{< var last_name >}} meets DSM-5 criteria for conditions directly impacting cognitive, emotional, and behavioral functioning, contributing to the incident. He expresses fear of being perceived as aggressive, emphasizing that his actions were motivated by fear and anxiety rather than anger. He has participated in anger management, demonstrating awareness of his need to regulate his emotional responses. Further, {{< var mr_mrs >}} {{< var last_name >}} 's stroke history impacts his mobility and potentially his sense of vulnerability. He reflects on familial and cultural influences affecting his perceptions and decisions around self-defense.
 
-The current follow-up evaluation underscores the need for a comprehensive approach to Mr.  Smalls's mental health and cognitive concerns. It highlights the importance of considering his cultural background, language barriers, and the complex interplay of trauma, stress, and both manic- and depressive-like emotions in his life. Mr.  Smalls is recommended for the Mental Health Diversion Program to address these multifaceted aspects, supporting his recovery and enhancing his quality of life. With adherence to a recommended treatment plan, his prognosis is favorable for mental health diversion, offering significant benefits in addressing underlying mental health issues and reducing recidivism risk.
+The current follow-up evaluation underscores the need for a comprehensive approach to {{< var mr_mrs >}} {{< var last_name >}} 's mental health and cognitive concerns. It highlights the importance of considering his cultural background, language barriers, and the complex interplay of trauma, stress, and both manic- and depressive-like emotions in his life. {{< var mr_mrs >}} {{< var last_name >}} is recommended for the Mental Health Diversion Program to address these multifaceted aspects, supporting his recovery and enhancing his quality of life. With adherence to a recommended treatment plan, his prognosis is favorable for mental health diversion, offering significant benefits in addressing underlying mental health issues and reducing recidivism risk.
 
 ### Diagnostic Impression
 
