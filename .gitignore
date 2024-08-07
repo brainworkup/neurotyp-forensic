@@ -79,3 +79,13 @@ report-output.tex
 mental-health-diversion-template.pdf
 _extensions/neurotyp/typst-template.typ.bk
 _extensions/neurotyp/typst-template.pdf
+.history/
+.vscode/
+Mental-Health-Diversion-Report-Templat.md
+forensic_neuropsych_chat_v2.*
+forensic_neuropsych_chat_v1.*
+forensic_neuropsych_chat_v1_joey.qmd
+forensic_neuropsych_chat_v2_joey.pdf
+forensic_neuropsych_chat_v2_joey.qmd
+chat_forensic_template.*
+src/csv/neuropsych_lookup_table.csv
