@@ -1,7 +1,7 @@
 ---
 title: "Pluck Tables BASC-3 SRP Adolescent"
 params:
-  patient: Biggie
+  patient: "{{< var patient >}}"
   test: basc3_srp_adolescent
   test_name: "BASC-3 SRP"
   file:
@@ -38,7 +38,7 @@ library(rmdformats)
 # Set JAVA environment
 Sys.setenv(
   JAVA_HOME =
-    "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"
+    "/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-22.0.1+8.1/Contents/Home"
 )
 options(java.parameters = "-Xmx16000m")
 # Set knitr options

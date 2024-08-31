@@ -1,7 +1,7 @@
 ---
 title: "Pluck Tables from WAIS-IV"
 params:
-  patient: Biggie
+  patient: "{{< var patient >}}"
   test:
     label: "Test"
     value: wais4
@@ -210,7 +210,7 @@ output:
 ```{r setup, include = FALSE}
 Sys.setenv(
   JAVA_HOME =
-    "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"
+    "/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-22.0.1+8.1/Contents/Home"
 )
 options(java.parameters = "-Xmx16000m")
 knitr::opts_chunk$set(
@@ -235,6 +235,25 @@ library(tidyr)
 library(dplyr)
 library(bwu)
 ```
+
+## Parameters
+
+```{r}
+patient <- (params$patient)
+test <- (params$test)
+test_name <- (params$test_name)
+pages <- (params$pages)
+# file <- file.path(file.choose())
+file <- file.path(params$file)
+if (params$test == "conners4_self") {
+  saveRDS(file, "conners4_self.rds")
+} else if (params$test == "conners4_parent") {
+  saveRDS(file, "conners4_parent.rds")
+} else if (params$test == "conners4_teacher") {
+  saveRDS(file, "conners4_teacher.rds")
+}
+```
+
 
 ## Patient
 
