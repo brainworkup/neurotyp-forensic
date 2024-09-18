@@ -89,3 +89,10 @@ forensic_neuropsych_chat_v2_joey.pdf
 forensic_neuropsych_chat_v2_joey.qmd
 chat_forensic_template.*
 src/csv/neuropsych_lookup_table.csv
+
+
+forensic.code-workspace
+test_scale_descriptions.md 
+Mental-Health-Diversion-Report-Template.md 
+pre_render_typ.R 
+neurotyp_functions.R

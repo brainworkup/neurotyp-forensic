@@ -1,1 +1,9 @@
-/Users/joey/neurotyp/adult/_02-04_spatial_text.qmd
+{{< var patient >}} demonstrates a mix of { range } to { range } abilities in visuospatial processing.
+
+- **Perception**: { range } perceptual processing, discrimination, and pattern matching requiring close attention to visual detail.
+
+- **Reasoning**: { range } inductive reasoning and nonverbal problem-solving.
+
+- **Construction**: Constructing and recreating abstract visual designs was { range }.
+
+- **Organization**: Copying of a complex figure requiring visuospatial integration, planning and organization, and efficient encoding of visuospatial material was { range }. This indicates executive function difficulties in planning and organizing complex visuospatial material.

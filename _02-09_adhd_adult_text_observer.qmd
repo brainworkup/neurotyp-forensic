@@ -1,1 +1,5 @@
-/Users/joey/neurotyp/adult/_02-09_adhd_adult_text_observer.qmd
+**Clinical Profile:**
+The patient exhibits Above Average Observer-reported Negative Self-Concept, indicating poor social relationships and low self-esteem. Her father also reports High Average Emotional Dysregulation, suggesting difficulty calming down and hiding emotions. Additionally, her father observes High Average Impulsivity, characterized by impulsive acts, low frustration tolerance, and mood changes.
+
+**Executive Function Weaknesses:**
+The patient shows Average Observer-reported Inattention/Executive Dysfunction, which may indicate trouble concentrating, planning, or completing tasks. This could also manifest as forgetfulness, absent-mindedness, or disorganization.
