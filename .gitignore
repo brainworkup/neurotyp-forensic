@@ -96,3 +96,10 @@ test_scale_descriptions.md
 Mental-Health-Diversion-Report-Template.md 
 pre_render_typ.R 
 neurotyp_functions.R
+.quartoignore
+R/
+_01-00_forensic_brief_report.qmd
+cognitive_domains.R
+pre_render_typ.R
+refs.bib
+test_scale_descriptions.md
