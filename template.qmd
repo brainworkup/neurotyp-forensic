@@ -1,7 +1,7 @@
 ---
 title: NEUROCOGNITIVE EXAMINATION
 name: Biggie Smalls
-doe: today
+doe: {{< var doe >}}
 patient: Biggie
 ---
 
@@ -10,28 +10,50 @@ patient: Biggie
 #| include: false
 #| cache: false
 
-# Load necessary packages
 packages <- c(
-  "ggtext", "ggthemes", "glue", "gt", "gtExtras", "hablar", "here",
-  "htmlwidgets", "janitor", "knitr", "magick", "png", "manipulateWidget", "quarto",
-  "readxl", "rmarkdown", "scales", "snakecase", "stats", "svglite",
-  "tidyselect", "tidytext", "tidyverse", "webshot2", "widgetframe", "xfun",
-  "yaml", "bwu"
+  "dplyr",
+  "collapse",
+  "glue",
+  "gt",
+  "here",
+  "janitor",
+  "knitr",
+  "quarto",
+  "readr",
+  "readxl",
+  "rmarkdown",
+  "snakecase",
+  "tidytable",
+  "vroom",
+  "xfun",
+  "bwu"
 )
-xfun::pkg_load2(packages)
 
-# Set knitr options
-knitr::opts_knit$set(width = 80, digits = 2, warnPartialMatchArgs = FALSE)
-knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
-knitr::knit_hooks$set(optipng = knitr::hook_optipng)
-
-# Set plot hook for LaTeX output
-if (identical(knitr:::pandoc_to(), "latex")) {
-  knitr::knit_hooks$set(plot = knitr::hook_plot_tex)
+# Function to load packages one by one
+load_packages <- function(packages) {
+  for (pkg in packages) {
+    if (!require(pkg, character.only = TRUE)) {
+      install.packages(pkg)
+      library(pkg, character.only = TRUE)
+    }
+    message(paste("Loaded package:", pkg))
+  }
 }
 
+# Call the function to load packages
+load_packages(packages)
+
+# Set knitr options
+knitr::opts_knit$set(
+  width = 80,
+  digits = 2,
+  warnPartialMatchArgs = FALSE,
+  crop = knitr::hook_pdfcrop,
+  optipng = knitr::hook_optipng
+)
+
 # Set environment variables with default values
-Sys.setenv(PATIENT = "Biggie", RETURN_PLOT = TRUE)
+Sys.setenv(PATIENT = "{{< var patient >}}", RETURN_PLOT = TRUE)
 patient <- Sys.getenv("PATIENT")
 return_plot <- Sys.getenv("RETURN_PLOT")
 ```
@@ -40,27 +62,28 @@ return_plot <- Sys.getenv("RETURN_PLOT")
 #| label: data-load
 #| include: false
 
-file_path <- here::here(patient)
+file_path <- here::here("data", "csv")
 bwu::load_data(here::here(file_path))
-neurocog <- readr::read_csv("neurocog.csv")
-neurobehav <- readr::read_csv("neurobehav.csv")
-neuropsych <- readr::read_csv("neuropsych.csv")
-validity <- readr::read_csv("validity.csv")
+neurocog <- vroom::vroom("neurocog.csv")
+neurobehav <- vroom::vroom("neurobehav.csv")
+neuropsych <- vroom::vroom("neuropsych.csv")
+validity <- vroom::vroom("validity.csv")
 ```
 
 ```{=typst}
-#let name = [Biggie Smalls]
-#let doe = [2023-01-02]
-#let patient = [Biggie]
+#let name = [{{< var first_name >}} {{< var last_name >}}]
+#let doe = [{{< var doe >}}]
+#let patient = [{{< var patient >}}]
 #v(2em, weak: true)
 #show block: set par(leading: 0.65em)
 #block[
-*CASE NUMBER:* {{< var case_number >}} \
-*PATIENT NAME:* #name, Age {{< var age >}} \
-*DATE OF EXAM:* {{< var doe1 >}} \
-*DATE OF REPORT:* {{< var date_of_report >}} \
+*CASE NUMBER*: {{< var case_number >}} \
+*PATIENT NAME:* #name, Age {{< var age >}}  \
+*DATE OF EXAM:* {{< var doe >}} \
+*DATE OF REPORT*: {{< var date_of_report >}} \
 ]
 ```
+
 
 {{< include _00-00_tests.qmd >}}
 

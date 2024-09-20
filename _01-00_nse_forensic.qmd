@@ -6,7 +6,9 @@
 
 On {{< var doe1 >}}, I conducted a clinical interview with {{< var mr_mrs >}} {{< var last_name >}}, {{< var first_name >}} {{< var last_name >}}'s biological mother, via a HIPAA-compliant telehealth platform, gathering data on {{< var his_her >}} developmental, medical, and psychosocial histories. The following day, I performed an in-person neuropsychological and psychodiagnostic evaluation of {{< var mr_mrs >}} {{< var last_name >}}, which lasted approximately eight hours.
 
-This report is based on a review of available information contained in medical records and criminal records, as well as interviews with {{< var mr_mrs >}} {{< var last_name >}}, {{< var his_her >}} mother {{< var mr_mrs >}} {{< var last_name >}}, attorney {{< var attorney >}}, and information gathered during multiple days of evaluation. I reserve the right to change my opinions about the following should I be provided additional records that alter my understanding of the findings. Please note my current employer, Keck School of Medicine of USC, is neither involved nor affiliated with this case, and that the patient was referred to me by {{< var his_her >}} attorney's office.
+This report is based on a review of available information contained in medical records and criminal records, as well as interviews with {{< var mr_mrs >}} {{< var last_name >}}, {{< var his_her >}} mother {{< var mr_mrs >}} {{< var last_name >}}, attorney {{< var attorney >}}, and information gathered during multiple days of evaluation. I reserve the right to change my opinions about the following should I be provided additional records that alter my understanding of the findings. [^1]
+
+[^1]: Please note my current employer, Keck School of Medicine of USC, is neither involved in nor affiliated with this case, and that the patient was referred to me by {{< var his_her >}} attorney's office.
 
 ## Reason for Referral
 

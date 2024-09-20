@@ -1,7 +1,5 @@
 # TESTS ADMINISTERED {#sec-tests}
 
-<!-- ## Adult -->
-
 -   Comprehensive Neuropsychiatric Symptom and History Interview
 -   Conners' Adult ADHD Diagnostic Interview for DSM-IV, Part I: History (CAADID Part 1)
 -   Advanced Clinical Solutions (ACS): Word Choice Test, Test of Premorbid Functioning (TOPF), Social Cognition
@@ -12,10 +10,6 @@
 -   Childhood Autism Rating Scale, 2nd ed, High-Functioning Version (CARS-2 HF)
 -   Comprehensive Executive Function Inventory, Adult, Observer (CEFI Adult Observer)
 -   Comprehensive Executive Function Inventory, Adult, Self-Report Form (CEFI Adult Self-Report)
--   Comprehensive Executive Function Inventory, Observer Report (CEFI Observer)
--   Comprehensive Executive Function Inventory, Parent Report (CEFI Parent)
--   Comprehensive Executive Function Inventory, Self-Report (CEFI Self)
--   Comprehensive Executive Function Inventory, Teacher Report (CEFI Teacher)
 -   Conners' Adult ADHD Rating Scales--Observer Report: Long Version (CAARS--O:L)
 -   Conners' Adult ADHD Rating Scales--Self-Report: Long Version (CAARS--S:L)
 -   Conners' Adult ADHD Rating Scales, 2nd ed, Observer (CAARS-2 Observer)
@@ -39,3 +33,12 @@
 -   Wide Range Achievement Test, 5th ed (WRAT-5)
 -   Wide Range Achievement Test, 5th ed, Blue Form (WRAT-5): Word Reading
 -   Wide Range Achievement Test, 5th ed, Green Form (WRAT-5): Word Reading
+- Comprehensive Neuropsychiatric Symptom and History Interview
+- Structured Clinical Interview for DSM-5 Disorders, Clinician Version (SCID-5-CV)
+- Conners' Adult ADHD Rating Scales, 2nd ed, Self-Report (CAARS-2 Self-Report)
+- Advanced Clinical Solutions (ACS): Word Choice Test, Test of Premorbid Functioning (TOPF)
+- Neuropsychological Assessment Battery, Screener (NAB-S): Attention, Language, Memory, Spatial, and Executive Functions Modules
+- Neuropsychological Assessment Battery (NAB): Judgment
+- Personality Assessment Inventory (PAI); not allowed
+- NIH EXAMINER: BRS
+- Hare Psychopathology
