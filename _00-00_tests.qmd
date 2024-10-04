@@ -38,7 +38,22 @@
 - Conners' Adult ADHD Rating Scales, 2nd ed, Self-Report (CAARS-2 Self-Report)
 - Advanced Clinical Solutions (ACS): Word Choice Test, Test of Premorbid Functioning (TOPF)
 - Neuropsychological Assessment Battery, Screener (NAB-S): Attention, Language, Memory, Spatial, and Executive Functions Modules
-- Neuropsychological Assessment Battery (NAB): Judgment
-- Personality Assessment Inventory (PAI); not allowed
-- NIH EXAMINER: BRS
-- Hare Psychopathology
+
+- Comprehensive Neuropsychiatric Symptom and History Interview
+- Structured Clinical Interview for DSM-5 Disorders, Clinician Version (SCID-5-CV)
+- Conners' Adult ADHD and Executive Function Rating Scales, 2nd ed, Self-Report (CAARS-2 Self-Report)
+- NIH Executive Abilities--Measures and Instruments for Neurobehavioral Evaluation and Research (NIH EXAMINER):
+  - Behavioral Rating Scale
+- Advanced Clinical Solutions (ACS):
+  - Word Choice Test
+  - Test of Premorbid Functioning (TOPF)
+- Neuropsychological Assessment Battery, Screener (NAB-S):
+  - Attention Module 
+  - Language Module
+  - Memory Module
+  - Spatial Module
+  - Executive Functions Module
+- Neuropsychological Assessment Battery (NAB): 
+  - Judgment
+- Hare Psychopathy Checklist, Revised (PCL-R)
+- Personality Assessment Inventory (PAI); not completed, digital version not allowed in the testing environment
