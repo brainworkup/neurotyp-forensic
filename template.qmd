@@ -84,7 +84,6 @@ validity <- vroom::vroom("validity.csv")
 ]
 ```
 
-
 {{< include _00-00_tests.qmd >}}
 
 {{< pagebreak >}}
@@ -109,11 +108,9 @@ validity <- vroom::vroom("validity.csv")
 
 {{< include _02-06_memory.qmd >}}
 
-<!-- {{< include _02-07_motor.qmd >}} -->
+{{< include _02-07_motor.qmd >}}
 
 <!-- {{< include _02-08_social.qmd >}} -->
-
-
 
 <!-- {{< include _02-11_adaptive.qmd >}} -->
 
