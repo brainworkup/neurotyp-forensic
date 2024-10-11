@@ -1,15 +1,42 @@
 ## Overall Evaluation Interpretation
 
-{{< var first_name >}} {{< var last_name >}} is a {{< var age >}}-year-old {{< var handedness >}}-handed {{< var sex >}} with a history of {{< var dx1 >}}, {{< var dx2 >}}, and {{< var dx3 >}} who was referred for neuropsychological testing as part of a comprehensive work-up for attention-deficit/hyperactivity disorder. General cognitive ability is well within normal limits, and there is no evidence of decline from premorbid estimates. No deficits were detected in the domains of attention, processing speed, motor functioning, or visuospatial skills. Although many aspects of executive functioning, language functioning, and memory were within normal limits, {{< var he_she >}} demonstrated mildly inefficient problem solving and hypothesis testing, weaknesses in word retrieval, and inefficiency in new learning of verbal information. There is no evidence of a mood disorder at this time.
-
-In conclusion, the cognitive profile is ...
+On {{< var doe >}}, I conducted a neuropsychological and psychodiagnostic assessment with {{< var mr_mrs >}} {{< var first_name >}} {{< var last_name >}}, gathering data on {{< var his_her >}} developmental, medical, and psychosocial histories, past and current symptomatology, arrest history, and concluding with a structured psychiatric evaluation and neurocognitive examination. The evaluation provided meaningful information and objective data relevant to determining if {{< var first_name >}} {{< var last_name >}} is a candidate for Mental Health Diversion given the nature and severity of his untreated bipolar disorder and compromised mental state at the time of the incident.
 
 ### Diagnostic Impression
 
-- {{< var dsm5_dx1 >}}
-- {{< var dsm5_dx2 >}}
-- {{< var dsm5_dx3 >}}
-- {{< var dsm5_dx4 >}}
-- {{< var dsm5_dx5 >}}
+1. 296.44 (F31.2) Bipolar I Disorder, With psychotic features, Most recent episode manic
+1. 799.59 (R41.9) Unspecified Neurocognitive Disorder
 
-- [DSM-5/ICD-10 Codes](_03-00_dsm5_icd10_dx.qmd)
+## Mental Health Diversion: Contextual Analysis and Interpretation
+
+### 1. Does the defendant suffer from any mental disorders as identified in the most recent edition of the Diagnostic and Statistical Manual of Mental Disorders (DSM)?
+
+Yes, the defendant meets the criteria for two mental disorders as defined by DSM-5.
+
+- ***Bipolar I Disorder***
+
+For context, a manic phase of bipolar disorder is characterized by a distinct change in behavior lasting at least 1 week, marked by increased talkativeness, rapid speech, decreased need for sleep, racing thoughts, distractibility, and psychomotor agitation. Accompanying these symptoms are elevated or expansive mood, mood lability, impulsivity, irritability, and grandiosity. 
+
+Mania also commonly presents with psychotic features, which include delusions or hallucinations. Similar to the defendant, many patients endorse _grandiose delusions_, believing they are high-level operatives such as spies, government officials, members of secret agencies, or that they are knowledgeable professionals (even when they have no such background). _Delusions of paranoia_ are also common, in which patients believe that people are stalking, targeting, or surveilling them. They may believe this to be done by government agencies, gangs, or others. Also similar to the defendant, patients amid a manic phase commonly engage in goal-directed activities that may result in harmful consequences, such as spending excessive money, starting businesses unprepared, traveling, or promiscuity. 
+
+When manic, these patients are highly unlikely to respond to outsiders’ views on their psychosis as well as their mania. A component of the manic phase is that generally, the individuals themselves do not realize what is happening (poor insight) and their decision-making is impaired (poor judgment). The problem is mainly noticed by others, including family members, friends, and even strangers or police. Mr. {{< var doe >}}' psychiatric, psychosocial, and arrest history tightly align with the DSM-5 criteria for Bipolar I Disorder, with Psychotic Features.
+
+- ***Unspecified Neurocognitive Disorder***
+
+{{< var mr_mrs >}} {{< var first_name >}} {{< var last_name >}} presents with significant cognitive decline, which reflects the impact of underlying neuropsychiatric illness, medication side effects, and  other contributing factors. It will be import to track its progression and impact on daily functioning. The observed pattern of deficits in his neurocognitive profile aligns with the DSM-5 diagnosis of Unspecified Neurocognitive Disorder.
+
+### 2. Were any mental disorders a motivating, causal, or contributing factor to the defendant’s involvement in the commission of the offense?
+
+Yes, causal.
+
+### 3. If any mental disorders were significant factors in the commission of the offense, would the defendant’s symptoms of those mental disorders respond to treatment?
+
+Yes. The defendant's symptoms related to bipolar disorder would respond well to treatment. 
+
+### 4. Does the defendant agree to comply with treatment as a condition of diversion?
+
+Yes, the defendant agreed to comply with treatment as a condition of diversion.
+
+### 5. Would the defendant pose an unreasonable risk of danger to public safety (under the meaning of California Penal Code 1001.36), if treated in the community?
+
+The defendant would not pose “an unreasonable risk of danger to public safety” under the meaning of California Penal Code 1001.36, if treated in the community.

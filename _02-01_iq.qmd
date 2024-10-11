@@ -1,4 +1,4 @@
-## General Cognitive Ability {#sec-iq}
+<!-- ## General Cognitive Ability {#sec-iq} -->
 
 {{< include _02-01_iq_text.qmd >}}
 
@@ -115,7 +115,8 @@ scales <- c(
   "Language Index (LAN)",
   "Spatial Index (SPT)",
   "Memory Index (MEM)",
-  "Executive Functions Index (EXE)"
+  "Executive Functions Index (EXE)",
+  "Judgment"
 )
 
 # Filter the data using the filter_data function from the bwu library
@@ -183,7 +184,8 @@ subset <- c(
   "Language Index (LAN)",
   "Spatial Index (SPT)",
   "Memory Index (MEM)",
-  "Executive Functions Index (EXE)"
+  "Executive Functions Index (EXE)",
+  "Judgment"
 )
 
 # Filter the data to subset only the specified scales
@@ -197,13 +199,15 @@ multiline <- TRUE
 
 # footnotes
 fn_standard_score <- gt::md("Score = Standard score (Mean = 100 [50th‰], SD ± 15 [16th‰, 84th‰])")
+fn_t_score <- gt::md("Score = T-score (Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰])")
 
 # Define the groups for the table
 grp_iq <- list(
   standard_score = c(
     "Composite Scores", "Test of Premorbid Functioning", "WAIS-IV", "WAIS-4",
     "WASI-2", "WISC-5", "WISC-V", "WRAT-5", "KTEA-3", "NAB", "NAB-S", "RBANS", "WPPSI-IV"
-  )
+  ),
+  t_score = c("NAB Daily Living")
 )
 
 # Create the table using the tbl_gt function from the bwu library
@@ -213,7 +217,9 @@ bwu::tbl_gt(
   table_name = table_name,
   vertical_padding = vertical_padding,
   fn_standard_score = fn_standard_score,
+  fn_t_score = fn_t_score,
   grp_standard_score = grp_iq[["standard_score"]],
+  grp_t_score = grp_iq[["t_score"]],
   dynamic_grp = grp_iq,
   multiline = multiline
 )
@@ -231,9 +237,12 @@ bwu::tbl_gt(
 x <- data_iq$z_mean_subdomain
 y <- data_iq$subdomain
 
+# x <- data_iq$z_mean_narrow
+# y <- data_iq$narrow
+
 # plot args
 colors <- NULL
-return_plot <- Sys.getenv("RETURN_PLOT")
+return_plot <- TRUE
 
 # Define the filename for the plot
 filename <- "fig_iq.svg"
@@ -263,7 +272,7 @@ options(warn = 0) # Reset to default behavior
 ```{=typst}
 // Define a function to create a domain with a title, a table, and a figure
 #let domain(title: none, file_qtbl, file_fig) = {
-  let font = (font: "Roboto Slab", size: 0.5em)
+  let font = (font: "Roboto Slab", size: 0.7em)
   set text(..font)
   pad(top: 0.5em)[]
   grid(
@@ -279,9 +288,7 @@ options(warn = 0) # Reset to default behavior
       [#image(file_fig, width: auto)],
       caption: figure.caption(
         position: bottom,
-        [
-          _Premorbid Ability_ is an estimate of an individual's intellectual functioning prior to known or suspected onset of brain disease or dysfunction._Neurocognitive Index_ refers to an overall capacity to reason, to solve problems, and to learn useful information; _Acquired Knowledge_ involves understanding the world through language and reasoning; _Fluid Reasoning_ is the logical analysis and solution of new problems, identifying underlying patterns, and applying logic.#footnote[In the figures presented here and below, scores have been converted to _z_-scores, where an average score is 0.0 and the standard deviation is 1.0. Any scores below the −1.0 ticks are moderately concerning. Scores at or beyond the −2.0 ticks are clinically signficant and a cause for greater concern.]
-        ],
+        [_Premorbid Ability_ represents an estimate of the individual’s intellectual functioning prior to the onset of any known or suspected brain disease or dysfunction. _Neurocognitive Index_ reflects overall cognitive capacity, including verbal and nonverbal reasoning, problem-solving, and learning new information. Scores are presented as z-scores, where the average is 0.0 with a standard deviation of 1.],
       ),
       placement: none,
       kind: "image",
