@@ -3,6 +3,7 @@ title: NEUROCOGNITIVE EXAMINATION
 name: Biggie Smalls
 doe: {{< var doe >}}
 patient: Biggie
+date_of_report: {{< var date_of_report >}}
 ---
 
 ```{r}
@@ -79,6 +80,7 @@ validity <- vroom::vroom("validity.csv")
 #block[
 *CASE NUMBER*: {{< var case_number >}} \
 *PATIENT NAME:* #name, Age {{< var age >}}  \
+*DATE OF BIRTH:* {{< var dob >}} \
 *DATE OF EXAM:* {{< var doe >}} \
 *DATE OF REPORT*: {{< var date_of_report >}} \
 ]
