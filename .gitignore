@@ -14,7 +14,7 @@ _freeze/
 .flaskenv*
 .history/
 .idea
-.quartoignore
+# .quartoignore
 .Rproj.user
 .vscode/
 .vscode/settings.json
@@ -80,3 +80,7 @@ run_scrape_pdf_nse.R
 src/csv/neuropsych_lookup_table.csv
 test_scale_descriptions.md
 validity.csv
+audio/
+audio/
+.history/
+.Rhistory
