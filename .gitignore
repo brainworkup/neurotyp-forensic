@@ -81,6 +81,6 @@ src/csv/neuropsych_lookup_table.csv
 test_scale_descriptions.md
 validity.csv
 audio/
-audio/
 .history/
 .Rhistory
+*.code-workspace
