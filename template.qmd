@@ -88,15 +88,15 @@ validity <- vroom::vroom("validity.csv")
 
 {{< include _00-00_tests.qmd >}}
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
-{{< include _01-00_nse_forensic.qmd >}}
+{{< include _01-00_nse.qmd >}}
 
 <!-- {{< pagebreak >}} -->
 
-# NEUROCOGNITIVE FINDINGS {#sec-nt}
-
 {{< include _02-00_behav-obs.qmd >}}
+
+# NEUROCOGNITIVE FINDINGS {#sec-nt}
 
 {{< include _02-01_iq.qmd >}}
 
@@ -106,13 +106,17 @@ validity <- vroom::vroom("validity.csv")
 
 {{< include _02-04_spatial.qmd >}}
 
-{{< include _02-05_executive.qmd >}}
+{{< include _02-05_memory.qmd >}}
 
-{{< include _02-06_memory.qmd >}}
+{{< include _02-06_executive.qmd >}}
 
-{{< include _02-07_motor.qmd >}}
+<!-- {{< include _02-07_motor.qmd >}} -->
 
 <!-- {{< include _02-08_social.qmd >}} -->
+
+{{< include _02-09_adhd_adult.qmd >}}
+
+{{< include _02-10_emotion_adult.qmd >}}
 
 <!-- {{< include _02-11_adaptive.qmd >}} -->
 
