@@ -1,7 +1,7 @@
 version: 0.1.0
 
 # VARIABLES
-case_number: BA######
+case_number: ""
 patient: Biggie
 first_name: Biggie
 last_name: Smalls
@@ -18,7 +18,7 @@ handedness: right
 referral: Dr. Dre
 observer: Tupac Shakur
 observer_relation: Complicated
-attorney: Johnny Cochrane
+attorney: Johnny Cochrane, Esq.
 mr_mrs: Mr.
 he_she: he
 he_she_cap: He

@@ -119,6 +119,30 @@ options(tikzDefaultEngine = "xetex")
 
 data_daily_living_tbl <- dplyr::filter(data_daily_living, !is.na(percentile))
 
+ordering_list <- c(
+  "Driving Scenes",
+  "Bill Payment",
+  "Daily Living Memory Immediate Recall",
+  "Daily Living Memory Delayed Recall",
+  "Daily Living Memory Retention",
+  "Daily Living Memory Delayed Recognition",
+  "Daily Living Memory Recall vs. Recognition",
+  "Medication Instructions Immediate Recall",
+  "Medication Instructions Delayed Recall",
+  "Medication Instructions Delayed Recognition",
+  "Name/Address/Phone Immediate Recall",
+  "Name/Address/Phone Delayed Recall",
+  "Name/Address/Phone Delayed Recognition",
+  "Map Reading",
+  "Judgment"
+)
+
+# Process the data
+data_daily_living_tbl <- data_daily_living |>
+  dplyr::filter(scale %in% ordering_list) |>
+  dplyr::mutate(scale = factor(scale, levels = ordering_list)) |>
+  dplyr::arrange(scale)
+
 # args
 table_name <- "table_daily_living"
 vertical_padding <- 0
@@ -178,38 +202,7 @@ bwu::dotplot(
 options(warn = 0) # Reset to default behavior
 ```
 
-```{r}
-#| label: fig-daily_living-narrow
-#| include: false
-#| eval: false
-#| fig-cap: "daily_living and language functioning refers to the ability to access and apply acquired word knowledge, to daily_livingize meaningful concepts, to understand complex multistep instructions, to think about daily_living information, and to express oneself using words."
 
-# Arguments
-colors <- NULL
-return_plot <- TRUE
-filename <- "fig_daily_living_narrow.svg"
-
-# variables to plot
-x <- data_daily_living$z_mean_narrow
-y <- data_daily_living$narrow
-
-# Suppress warnings from being converted to errors
-options(warn = 1) # Set warn to 1 to make warnings not halt execution
-
-# Make dotplot
-bwu::dotplot(
-  data = data_daily_living,
-  x = x,
-  y = y,
-  colors = colors,
-  return_plot = return_plot,
-  filename = filename,
-  na.rm = TRUE
-)
-
-# Reset warning options to default if needed
-options(warn = 0) # Reset to default behavior
-```
 
 ```{=typst}
 #let domain(title: none, file_qtbl, file_fig) = {
