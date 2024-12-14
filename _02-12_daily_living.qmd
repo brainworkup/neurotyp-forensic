@@ -126,7 +126,7 @@ ordering_list <- c(
   "Daily Living Memory Delayed Recall",
   "Daily Living Memory Retention",
   "Daily Living Memory Delayed Recognition",
-  "Daily Living Memory Recall vs. Recognition",
+  # "Daily Living Memory Recall vs. Recognition",
   "Medication Instructions Immediate Recall",
   "Medication Instructions Delayed Recall",
   "Medication Instructions Delayed Recognition",

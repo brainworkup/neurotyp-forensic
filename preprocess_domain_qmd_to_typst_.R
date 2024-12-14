@@ -15,6 +15,7 @@ file_list <- c(
   "_02-09_adhd_adult.qmd",
   "_02-10_emotion_adult.qmd",
   # "_02-11_adaptive.qmd",
+  "_02-12_daily_living.qmd",
   "_03-00_sirf.qmd"
 )
 

@@ -184,7 +184,7 @@ bwu::cat_neuropsych_results(
 #| label: qtbl-emotion
 #| dev: tikz
 #| fig-process: pdf2png
-#| eval: true
+#| eval: false
 #| include: false
 options(tikzDefaultEngine = "xetex")
 
@@ -260,7 +260,7 @@ bwu::tbl_gt(
 #| out-height: 100%
 
 colors <- NULL
-return_plot <- Sys.getenv("RETURN_PLOT")
+return_plot <- TRUE
 filename <- "fig_emotion.svg"
 
 # arguments
@@ -279,7 +279,7 @@ bwu::dotplot(
 )
 ```
 
-```{=typst}
+<!-- ```{=typst}
 #let domain(title: none, file_qtbl, file_fig) = {
   let font = (font: "Roboto Slab", size: 0.7em)
   set text(..font)
@@ -304,8 +304,9 @@ bwu::dotplot(
         ),
       )
   }
-```
-```{=typst}
+``` -->
+
+<!-- ```{=typst}
 #let title = "Personality Assessment Scores"
 #let file_qtbl = "table_emotion.png"
 #let file_fig = "fig_emotion.svg"
@@ -314,4 +315,4 @@ bwu::dotplot(
   file_qtbl,
   file_fig
   )
-```
+``` -->

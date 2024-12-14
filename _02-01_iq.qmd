@@ -1,4 +1,4 @@
-<!-- ## General Cognitive Ability {#sec-iq} -->
+## General Cognitive Ability {#sec-iq}
 
 {{< include _02-01_iq_text.qmd >}}
 
@@ -59,10 +59,6 @@ iq <- iq |>
   )
 
 # Write the resulting data frame to a new CSV file
-# The file name is created by concatenating the 'pheno' variable and ".csv"
-# NA values are replaced with an empty string in the output file
-# Column names are included in the output file
-# If the file already exists, it is overwritten (not appended)
 readr::write_excel_csv(iq, paste0(pheno, ".csv"), na = "", col_names = TRUE, append = FALSE)
 ```
 
@@ -71,8 +67,6 @@ readr::write_excel_csv(iq, paste0(pheno, ".csv"), na = "", col_names = TRUE, app
 #| include: false
 #| eval: true
 
-# Read the data using the read_data function from the bwu library
-# The phenotype is specified by the 'pheno' variable
 data <- iq
 
 # Define the scales of interest
@@ -116,12 +110,13 @@ scales <- c(
   "Spatial Index (SPT)",
   "Memory Index (MEM)",
   "Executive Functions Index (EXE)",
-  "Judgment"
+  "Judgment",
+  "Similarities",
+  "Matrix Reasoning",
+  "Math Computation"
 )
 
-# Filter the data using the filter_data function from the bwu library
-# The domain is specified by the 'domains' variable
-# The scale is specified by the 'scales' variable
+# Filter the data
 data_iq <- bwu::filter_data(data, domain = domains, scale = scales)
 ```
 
@@ -180,12 +175,14 @@ subset <- c(
   "Word Reading",
   "Working Memory (WMI)",
   "Working Memory",
-  "Attention Index (ATT)",
-  "Language Index (LAN)",
-  "Spatial Index (SPT)",
-  "Memory Index (MEM)",
-  "Executive Functions Index (EXE)",
-  "Judgment"
+  # "Attention Index (ATT)",
+  # "Language Index (LAN)",
+  # "Spatial Index (SPT)",
+  # "Memory Index (MEM)",
+  # "Executive Functions Index (EXE)",
+  "Similarities",
+  "Matrix Reasoning",
+  "Math Computation"
 )
 
 # Filter the data to subset only the specified scales
@@ -198,17 +195,15 @@ vertical_padding <- 0
 multiline <- TRUE
 
 # footnotes
-fn_standard_score <- gt::md("Score = Standard score (Mean = 100 [50th‰], SD ± 15 [16th‰, 84th‰])")
-fn_t_score <- gt::md("Score = T-score (Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰])")
+fn_standard_score <- gt::md("Standard score: Mean = 100 [50th‰], SD ± 15 [16th‰, 84th‰]")
+fn_scaled_score <- gt::md("Scaled score:  Mean = 10 [50th‰], SD ± 3 [16th‰, 84th‰]")
 
 # Define the groups for the table
 grp_iq <- list(
-  standard_score = c(
-    "Composite Scores", "Test of Premorbid Functioning", "WAIS-IV", "WAIS-4",
-    "WASI-2", "WISC-5", "WISC-V", "WRAT-5", "KTEA-3", "NAB", "NAB-S", "RBANS", "WPPSI-IV"
-  ),
-  t_score = c("NAB Daily Living")
+  standard_score = c("Composite Scores", "Test of Premorbid Functioning", "WAIS-IV", "WAIS-4", "WASI-2", "WISC-5", "WISC-V", "WRAT-5", "KTEA-3", "NAB", "NAB-S", "RBANS", "WPPSI-IV", "WAIS-V", "WRAT5"),
+  scaled_score = c("WAIS-5", "WISC-5", "NEPSY-2", "D-KEFS", "WPPSI-IV", "CELF-5", "RBANS")
 )
+# wais5 taken out
 
 # Create the table using the tbl_gt function from the bwu library
 bwu::tbl_gt(
@@ -217,9 +212,9 @@ bwu::tbl_gt(
   table_name = table_name,
   vertical_padding = vertical_padding,
   fn_standard_score = fn_standard_score,
-  fn_t_score = fn_t_score,
   grp_standard_score = grp_iq[["standard_score"]],
-  grp_t_score = grp_iq[["t_score"]],
+  fn_scaled_score = fn_scaled_score,
+  grp_scaled_score = grp_iq[["scaled_score"]],
   dynamic_grp = grp_iq,
   multiline = multiline
 )
@@ -230,31 +225,15 @@ bwu::tbl_gt(
 #| include: false
 #| fig-cap: "_Premorbid Ability_ is an estimate of an individual's intellectual functioning prior to known or suspected onset of brain disease or dysfunction. _General Ability_ is the overall skill to reason, solve problems, and gain useful knowledge. _Crystallized Knowledge_ involves understanding the world through language and reasoning. _Fluid Reasoning_ is the logical analysis and solution of new problems, identifying underlying patterns, and applying logic."
 
-# Define the x and y variables for the dotplot
-# x <- data_iq$z
-# y <- data_iq$scale
-
 x <- data_iq$z_mean_subdomain
 y <- data_iq$subdomain
-
-# x <- data_iq$z_mean_narrow
-# y <- data_iq$narrow
 
 # plot args
 colors <- NULL
 return_plot <- TRUE
-
-# Define the filename for the plot
 filename <- "fig_iq.svg"
 
-# Define the scales to keep
-# keep <- c("General Ability", "Crystallized Knowledge", "Fluid Reasoning")
-# data_iq <- dplyr::filter(data_iq, scale %in% keep)
-
-# Suppress warnings from being converted to errors
-options(warn = 1) # Set warn to 1 to make warnings not halt execution
-
-# Create the dotplot using the dotplot function from the bwu library
+# Create the dotplot
 bwu::dotplot(
   data = data_iq,
   x = x,
@@ -265,8 +244,19 @@ bwu::dotplot(
   na.rm = TRUE
 )
 
-# Reset warning options to default if needed
-options(warn = 0) # Reset to default behavior
+x <- data_iq$z_mean_narrow
+y <- data_iq$narrow
+filename <- "fig_iq_narrow.svg"
+# Create the dotplot
+bwu::dotplot(
+  data = data_iq,
+  x = x,
+  y = y,
+  colors = colors,
+  return_plot = return_plot,
+  filename = filename,
+  na.rm = TRUE
+)
 ```
 
 ```{=typst}
@@ -288,7 +278,7 @@ options(warn = 0) # Reset to default behavior
       [#image(file_fig, width: auto)],
       caption: figure.caption(
         position: bottom,
-        [_Premorbid Ability_ represents an estimate of the individual’s intellectual functioning prior to the onset of any known or suspected brain disease or dysfunction. _Neurocognitive Index_ reflects overall cognitive capacity, including verbal and nonverbal reasoning, problem-solving, and learning new information. Scores are presented as z-scores, where the average is 0.0 with a standard deviation of 1.],
+        [_Premorbid Ability_ represents an estimate of the individual's intellectual functioning prior to the onset of any known or suspected brain disease or dysfunction. _General Ability_ reflects overall cognitive capacity, including verbal and nonverbal reasoning, problem-solving, and learning new information. Scores are presented as z-scores, where the average is 0 with a standard deviation of 1.],
       ),
       placement: none,
       kind: "image",
@@ -299,7 +289,7 @@ options(warn = 0) # Reset to default behavior
 }
 ```
 
-```{=typst}
+<!-- ```{=typst}
 // Define the title of the domain
 #let title = "General Cognitive Ability"
 
@@ -308,6 +298,20 @@ options(warn = 0) # Reset to default behavior
 
 // Define the file name of the figure
 #let file_fig = "fig_iq.svg"
+
+// The title is appended with ' Index Scores'
+#domain(title: [#title Scores], file_qtbl, file_fig)
+``` -->
+
+```{=typst}
+// Define the title of the domain
+#let title = "General Cognitive Ability"
+
+// Define the file name of the table
+#let file_qtbl = "table_iq.png"
+
+// Define the file name of the figure
+#let file_fig = "fig_iq_narrow.svg"
 
 // The title is appended with ' Index Scores'
 #domain(title: [#title Scores], file_qtbl, file_fig)
