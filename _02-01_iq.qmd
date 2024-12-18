@@ -316,3 +316,5 @@ bwu::dotplot(
 // The title is appended with ' Index Scores'
 #domain(title: [#title Scores], file_qtbl, file_fig)
 ```
+
+<!-- _Neurocognitive Index_ provides a comprehensive measure of cognitive functioning. This index is derived from the performance across five cognitive domains: _Attention_ Assesses the ability to focus, sustain concentration, and process information; _Language_ Evaluates verbal communication skills, including naming, comprehension, and verbal fluency; _Memory_ Measures both immediate and delayed recall of verbal and visual information; _Spatial_ Assesses visuospatial skills, including perception, construction, and orientation; _Executive Functions_ Evaluates higher-order cognitive abilities such as planning, problem-solving, and mental flexibility. #footnote[In the figures presented here and below, scores have been converted to _z_-scores, where an average score is 0.0 and the standard deviation is 1.0. Any scores below the −1.0 ticks are moderately concerning. Scores at or beyond the −2.0 ticks are clinically significant and a cause for greater concern. -->
