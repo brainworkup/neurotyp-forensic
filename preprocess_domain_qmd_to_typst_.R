@@ -1,5 +1,6 @@
-# Load the knitr package
+# Load the quarto and knitr packages
 library(quarto)
+library(knitr)
 
 # Predefined list of input files
 file_list <- c(

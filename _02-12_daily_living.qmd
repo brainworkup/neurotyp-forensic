@@ -18,8 +18,8 @@ pheno <- "daily_living"
 #| include: false
 
 # Read the CSV file into a data frame
-# daily_living <- vroom::vroom("neuropsych.csv")
 daily_living <- vroom::vroom("neurocog.csv")
+
 # Filter the data frame to keep only rows where 'domain' equals 'domains'
 daily_living <- daily_living |> dplyr::filter(domain %in% domains)
 
@@ -66,27 +66,25 @@ readr::write_excel_csv(daily_living, paste0(pheno, ".csv"), na = "", col_names =
 #| include: false
 
 scales <- c(
+  "Driving Scenes",
   "Bill Payment",
   "Daily Living Memory Delayed Recall",
   "Daily Living Memory Delayed Recognition",
   "Daily Living Memory Immediate Recall",
   "Daily Living Memory Recall vs. Recognition",
   "Daily Living Memory Retention",
-  "Driving Scenes",
-  "Judgment",
-  "Map Reading",
   "Medication Instructions Delayed Recall",
   "Medication Instructions Delayed Recognition",
   "Medication Instructions Immediate Recall",
   "Name/Address/Phone Delayed Recall",
   "Name/Address/Phone Delayed Recognition",
-  "Name/Address/Phone Immediate Recall"
+  "Name/Address/Phone Immediate Recall",
+  "Map Reading",
+  "Judgment"
 )
 
 
 # Filter the data using the filter_data function from the bwu library
-# The domain is specified by the 'domains' variable
-# The scale is specified by the 'scales' variable
 data_daily_living <-
   bwu::filter_data(
     data = daily_living,
@@ -171,9 +169,9 @@ bwu::tbl_gt(
 ```
 
 ```{r}
-#| label: fig-daily_living-subdomain
+#| label: fig-daily-living-subdomain
 #| include: false
-#| fig-cap: "daily_living and language functioning refers to the ability to access and apply acquired word knowledge, to daily_livingize meaningful concepts, to understand complex multistep instructions, to think about daily_living information, and to express oneself using words."
+#| fig-cap: "Daily Living tests evaluate functional abilities required for independent living through ecologically-valid tasks, including bill payment processing, remembering appointments and medication instructions, map navigation, driving awareness, and everyday judgment. These tasks assess how cognitive abilities translate to real-world performance, providing insight into the patient's daily functioning and independence."
 
 # Arguments
 colors <- NULL
@@ -219,7 +217,7 @@ options(warn = 0) # Reset to default behavior
           ),
         figure([#image(file_fig)],
           caption: figure.caption(position: bottom, [
-            The Daily Living tests evaluate functional abilities required for independent living through ecologically-valid tasks. These include bill payment processing, remembering appointments and medication instructions, map navigation, driving awareness, and everyday judgment. These tasks assess how cognitive abilities translate to real-world performance across domains of memory, attention, language, spatial skills, and executive functioning.
+            _Daily Living_ tests evaluate functional abilities required for independent living through ecologically-valid tasks, including bill payment processing, remembering appointments and medication instructions, map navigation, driving awareness, and everyday judgment. These tasks assess how cognitive abilities translate to real-world performance, providing insight into the patient's daily functioning and independence. 
             ]),
           placement: none,
           kind: "image",
