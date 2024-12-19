@@ -59,6 +59,10 @@ iq <- iq |>
   )
 
 # Write the resulting data frame to a new CSV file
+# The file name is created by concatenating the 'pheno' variable and ".csv"
+# NA values are replaced with an empty string in the output file
+# Column names are included in the output file
+# If the file already exists, it is overwritten (not appended)
 readr::write_excel_csv(iq, paste0(pheno, ".csv"), na = "", col_names = TRUE, append = FALSE)
 ```
 
@@ -67,6 +71,8 @@ readr::write_excel_csv(iq, paste0(pheno, ".csv"), na = "", col_names = TRUE, app
 #| include: false
 #| eval: true
 
+# Read the data using the read_data function from the bwu library
+# The phenotype is specified by the 'pheno' variable
 data <- iq
 
 # Define the scales of interest
@@ -109,14 +115,12 @@ scales <- c(
   "Language Index (LAN)",
   "Spatial Index (SPT)",
   "Memory Index (MEM)",
-  "Executive Functions Index (EXE)",
-  "Judgment",
-  "Similarities",
-  "Matrix Reasoning",
-  "Math Computation"
+  "Executive Functions Index (EXE)"
 )
 
-# Filter the data
+# Filter the data using the filter_data function from the bwu library
+# The domain is specified by the 'domains' variable
+# The scale is specified by the 'scales' variable
 data_iq <- bwu::filter_data(data, domain = domains, scale = scales)
 ```
 
@@ -175,14 +179,11 @@ subset <- c(
   "Word Reading",
   "Working Memory (WMI)",
   "Working Memory",
-  # "Attention Index (ATT)",
-  # "Language Index (LAN)",
-  # "Spatial Index (SPT)",
-  # "Memory Index (MEM)",
-  # "Executive Functions Index (EXE)",
-  "Similarities",
-  "Matrix Reasoning",
-  "Math Computation"
+  "Attention Index (ATT)",
+  "Language Index (LAN)",
+  "Spatial Index (SPT)",
+  "Memory Index (MEM)",
+  "Executive Functions Index (EXE)"
 )
 
 # Filter the data to subset only the specified scales
@@ -196,14 +197,16 @@ multiline <- TRUE
 
 # footnotes
 fn_standard_score <- gt::md("Standard score: Mean = 100 [50th‰], SD ± 15 [16th‰, 84th‰]")
-fn_scaled_score <- gt::md("Scaled score:  Mean = 10 [50th‰], SD ± 3 [16th‰, 84th‰]")
+
+source_note <- gt::md("Standard score: Mean = 100 [50th‰], SD ± 15 [16th‰, 84th‰]")
 
 # Define the groups for the table
 grp_iq <- list(
-  standard_score = c("Composite Scores", "Test of Premorbid Functioning", "WAIS-IV", "WAIS-4", "WASI-2", "WISC-5", "WISC-V", "WRAT-5", "KTEA-3", "NAB", "NAB-S", "RBANS", "WPPSI-IV", "WAIS-V", "WRAT5"),
-  scaled_score = c("WAIS-5", "WISC-5", "NEPSY-2", "D-KEFS", "WPPSI-IV", "CELF-5", "RBANS")
+  standard_score = c(
+    "Composite Scores", "Test of Premorbid Functioning", "WAIS-IV", "WAIS-4",
+    "WASI-2", "WISC-5", "WISC-V", "WRAT-5", "KTEA-3", "NAB", "NAB-S", "RBANS", "WPPSI-IV"
+  )
 )
-# wais5 taken out
 
 # Create the table using the tbl_gt function from the bwu library
 bwu::tbl_gt(
@@ -211,10 +214,9 @@ bwu::tbl_gt(
   pheno = pheno,
   table_name = table_name,
   vertical_padding = vertical_padding,
-  fn_standard_score = fn_standard_score,
-  grp_standard_score = grp_iq[["standard_score"]],
-  fn_scaled_score = fn_scaled_score,
-  grp_scaled_score = grp_iq[["scaled_score"]],
+  source_note = source_note,
+  # fn_standard_score = fn_standard_score,
+  # grp_standard_score = grp_iq[["standard_score"]],
   dynamic_grp = grp_iq,
   multiline = multiline
 )
@@ -225,15 +227,31 @@ bwu::tbl_gt(
 #| include: false
 #| fig-cap: "_Premorbid Ability_ is an estimate of an individual's intellectual functioning prior to known or suspected onset of brain disease or dysfunction. _General Ability_ is the overall skill to reason, solve problems, and gain useful knowledge. _Crystallized Knowledge_ involves understanding the world through language and reasoning. _Fluid Reasoning_ is the logical analysis and solution of new problems, identifying underlying patterns, and applying logic."
 
-x <- data_iq$z_mean_subdomain
-y <- data_iq$subdomain
+# Define the x and y variables for the dotplot
+# x <- data_iq$z
+# y <- data_iq$scale
+
+# x <- data_iq$z_mean_subdomain
+# y <- data_iq$subdomain
+
+x <- data_iq$z_mean_narrow
+y <- data_iq$narrow
 
 # plot args
 colors <- NULL
 return_plot <- TRUE
+
+# Define the filename for the plot
 filename <- "fig_iq.svg"
 
-# Create the dotplot
+# Define the scales to keep
+# keep <- c("General Ability", "Crystallized Knowledge", "Fluid Reasoning")
+# data_iq <- dplyr::filter(data_iq, scale %in% keep)
+
+# Suppress warnings from being converted to errors
+options(warn = 1) # Set warn to 1 to make warnings not halt execution
+
+# Create the dotplot using the dotplot function from the bwu library
 bwu::dotplot(
   data = data_iq,
   x = x,
@@ -244,25 +262,14 @@ bwu::dotplot(
   na.rm = TRUE
 )
 
-x <- data_iq$z_mean_narrow
-y <- data_iq$narrow
-filename <- "fig_iq_narrow.svg"
-# Create the dotplot
-bwu::dotplot(
-  data = data_iq,
-  x = x,
-  y = y,
-  colors = colors,
-  return_plot = return_plot,
-  filename = filename,
-  na.rm = TRUE
-)
+# Reset warning options to default if needed
+options(warn = 0) # Reset to default behavior
 ```
 
 ```{=typst}
 // Define a function to create a domain with a title, a table, and a figure
 #let domain(title: none, file_qtbl, file_fig) = {
-  let font = (font: "Roboto Slab", size: 0.7em)
+  let font = (font: "Roboto Slab", size: 0.6em)
   set text(..font)
   pad(top: 0.5em)[]
   grid(
@@ -278,7 +285,9 @@ bwu::dotplot(
       [#image(file_fig, width: auto)],
       caption: figure.caption(
         position: bottom,
-        [_Premorbid Ability_ represents an estimate of the individual's intellectual functioning prior to the onset of any known or suspected brain disease or dysfunction. _General Ability_ reflects overall cognitive capacity, including verbal and nonverbal reasoning, problem-solving, and learning new information. Scores are presented as z-scores, where the average is 0 with a standard deviation of 1.],
+        [
+        The Neurocognitive Index evaluates cognitive functioning across five domains: Attention (focus, concentration, and information processing), Language (verbal communication, naming, comprehension, and fluency), Memory (immediate and delayed verbal and visual recall), Spatial (visuospatial perception, construction, and orientation), and Executive Functions (planning, problem-solving, and mental flexibility). #footnote[In the figures presented here and below, scores have been converted to _z_-scores, where an average score is 0.0 and the standard deviation is 1.0. Any scores below the −1.0 ticks are moderately concerning. Scores at or beyond the −2.0 ticks are clinically significant and a cause for greater concern.]
+        ],
       ),
       placement: none,
       kind: "image",
@@ -289,7 +298,7 @@ bwu::dotplot(
 }
 ```
 
-<!-- ```{=typst}
+```{=typst}
 // Define the title of the domain
 #let title = "General Cognitive Ability"
 
@@ -301,20 +310,4 @@ bwu::dotplot(
 
 // The title is appended with ' Index Scores'
 #domain(title: [#title Scores], file_qtbl, file_fig)
-``` -->
-
-```{=typst}
-// Define the title of the domain
-#let title = "General Cognitive Ability"
-
-// Define the file name of the table
-#let file_qtbl = "table_iq.png"
-
-// Define the file name of the figure
-#let file_fig = "fig_iq_narrow.svg"
-
-// The title is appended with ' Index Scores'
-#domain(title: [#title Scores], file_qtbl, file_fig)
 ```
-
-<!-- _Neurocognitive Index_ provides a comprehensive measure of cognitive functioning. This index is derived from the performance across five cognitive domains: _Attention_ Assesses the ability to focus, sustain concentration, and process information; _Language_ Evaluates verbal communication skills, including naming, comprehension, and verbal fluency; _Memory_ Measures both immediate and delayed recall of verbal and visual information; _Spatial_ Assesses visuospatial skills, including perception, construction, and orientation; _Executive Functions_ Evaluates higher-order cognitive abilities such as planning, problem-solving, and mental flexibility. #footnote[In the figures presented here and below, scores have been converted to _z_-scores, where an average score is 0.0 and the standard deviation is 1.0. Any scores below the −1.0 ticks are moderately concerning. Scores at or beyond the −2.0 ticks are clinically significant and a cause for greater concern. -->

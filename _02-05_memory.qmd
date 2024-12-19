@@ -361,12 +361,12 @@ fn_scaled_score <- gt::md("Scaled score:  Mean = 10 [50th‰], SD ± 3 [16th‰,
 fn_t_score <- gt::md("T-score: Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰]")
 fn_z_score <- gt::md("Score = z-score (Mean = 0 [50th‰], SD ± 1 [16th‰, 84th‰])")
 
-# source_note <- gt::md("Score = _T_ score (Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰])")
+source_note <- gt::md("_T_ score: Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰]")
 
 # groupings
 grp_memory <- list(
   standard_score = c("CVLT-3", "CVLT-3 Brief", "NAB", "NAB-S", "CVLT-C"),
-  t_score = c("Rey Complex Figure", "NAB-S", "NAB Memory"),
+  t_score = c("Rey Complex Figure", "NAB-S", "NAB Memory", "NAB"),
   scaled_score = c("CVLT-3 Brief", "NEPSY-2", "CVLT-C", "CVLT-3")
 )
 
@@ -376,13 +376,13 @@ bwu::tbl_gt(
   pheno = pheno,
   table_name = table_name,
   vertical_padding = vertical_padding,
-  # source_note = source_note,
-  fn_standard_score = fn_standard_score,
-  fn_t_score = fn_t_score,
-  fn_scaled_score = fn_scaled_score,
-  grp_standard_score = grp_memory[["standard_score"]],
-  grp_t_score = grp_memory[["t_score"]],
-  grp_scaled_score = grp_memory[["scaled_score"]],
+  source_note = source_note,
+  # fn_standard_score = fn_standard_score,
+  # fn_t_score = fn_t_score,
+  # fn_scaled_score = fn_scaled_score,
+  # grp_standard_score = grp_memory[["standard_score"]],
+  # grp_t_score = grp_memory[["t_score"]],
+  # grp_scaled_score = grp_memory[["scaled_score"]],
   dynamic_grp = grp_memory,
   multiline = multiline
 )
