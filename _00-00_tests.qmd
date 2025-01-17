@@ -3,7 +3,6 @@
 - Comprehensive Neuropsychiatric Symptom and History Interview
 - Conners' Adult ADHD Diagnostic Interview for DSM-IV, Part I: History (CAADID Part 1)
 - Structured Clinical Interview for DSM-5 Disorders, Clinician Version (SCID-5-CV)
-- Advanced Clinical Solutions (ACS): Word Choice Test, Test of Premorbid Functioning (TOPF), Social Cognition
 - Beck Anxiety Inventory (BAI)
 - Brown Executive Function/Attention Scales, Parent Report (Brown EF/A Parent)
 - Brown Executive Function/Attention Scales, Self-Report (Brown EF/A Self)
@@ -21,14 +20,12 @@
 - Delis-Kaplan Executive Function System (D-KEFS): Color-Word Interference Test
 - Dot Counting Test (DCT)
 - Grooved Pegboard Test
-- Neuropsychological Assessment Battery (NAB): Attention, Language, Memory, Spatial, and Executive Functions Modules
-- Neuropsychological Assessment Battery, Screener (NAB-S): Attention, Language, Memory, Spatial, and Executive Functions Modules
-- NIH Executive Abilities--Measures and Instruments for Neurobehavioral Evaluation and Research (NIH EXAMINER): Unstructured Task, Verbal Fluency, Behavioral Rating Scale
 - Repeatable Battery for the Assessment of Neuropsychological Status (RBANS)
 - Rey-Osterrieth Complex Figure Test (ROCFT)
 - Trail Making Test (TMT)
 - Wechsler Adult Intelligence Scale, 4th ed (WAIS-4)
 - Wechsler Adult Intelligence Scale, 4th ed (WAIS-4): Similarities, Matrix Reasoning, Letter-Number Sequencing, Coding, Symbol Search, Digit Span, Vocabulary, Block Design, Figure Weights, Arithmetic, Cancellation
+- Wechsler Adult Intelligence Scale, 5th ed (WAIS-V)
 - Wechsler Individual Achievement Test, 4th ed (WIAT-4)
 - Wechsler Individual Achievement Test, 4th ed (WIAT-4): Word Reading, Reading Comprehension, Pseudoword Decoding, Orthographic Fluency, Decoding Fluency
 - Wechsler Memory Scale, 4th ed (WMS-4)
@@ -60,4 +57,3 @@
   - Judgment
 - Hare Psychopathy Checklist, Revised (PCL-R)
 - Personality Assessment Inventory (PAI)
-- Personality Assessment Inventory (PAI); not completed, digital version not allowed in the testing environment
