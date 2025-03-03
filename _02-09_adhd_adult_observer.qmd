@@ -75,7 +75,7 @@ scales <- c(
   "Inattention/Memory Problems",
   "Hyperactivity/Restlessness",
   "Impulsivity/Emotional Lability",
-  "Problems with Self-Concept",
+  "Problems with Observer-Concept",
   "DSM-5 Inattentive Symptoms",
   "DSM-5 Hyperactive-Impulsive Symptoms",
   "DSM-5 ADHD Symptoms Total",
@@ -89,13 +89,13 @@ scales <- c(
   "Initiation",
   "Organization",
   "Planning",
-  "Self-Monitoring",
+  "Observer-Monitoring",
   "Working Memory",
   "Inattention/Executive Dysfunction",
   "Hyperactivity",
   "Impulsivity",
   "Emotional Dysregulation",
-  "Negative Self-Concept",
+  "Negative Observer-Concept",
   "ADHD Inattentive Symptoms",
   "ADHD Hyperactive/Impulsive Symptoms",
   "Total ADHD Symptoms",
@@ -103,7 +103,7 @@ scales <- c(
   "CAARS-OR Inattention/Memory Problems",
   "CAARS-OR Hyperactivity/Restlessness",
   "CAARS-OR Impulsivity/Emotional Lability",
-  "CAARS-OR Problems with Self-Concept",
+  "CAARS-OR Problems with Observer-Concept",
   "CAARS-OR DSM-5 Inattentive Symptoms",
   "CAARS-OR DSM-5 Hyperactive-Impulsive Symptoms",
   "CAARS-OR DSM-5 ADHD Symptoms Total",
@@ -111,7 +111,7 @@ scales <- c(
   "CAARS-SR Inattention/Memory Problems",
   "CAARS-SR Hyperactivity/Restlessness",
   "CAARS-SR Impulsivity/Emotional Lability",
-  "CAARS-SR Problems with Self-Concept",
+  "CAARS-SR Problems with Observer-Concept",
   "CAARS-SR DSM-5 Inattentive Symptoms",
   "CAARS-SR DSM-5 Hyperactive-Impulsive Symptoms",
   "CAARS-SR DSM-5 ADHD Symptoms Total",
@@ -124,7 +124,7 @@ scales <- c(
   "CEFI-OR Initiation",
   "CEFI-OR Organization",
   "CEFI-OR Planning",
-  "CEFI-OR Self-Monitoring",
+  "CEFI-OR Observer-Monitoring",
   "CEFI-OR Working Memory",
   "CEFI-SR Full Scale",
   "CEFI-SR Attention",
@@ -134,7 +134,7 @@ scales <- c(
   "CEFI-SR Initiation",
   "CEFI-SR Organization",
   "CEFI-SR Planning",
-  "CEFI-SR Self-Monitoring",
+  "CEFI-SR Observer-Monitoring",
   "CEFI-SR Working Memory"
 )
 
@@ -145,26 +145,24 @@ data_adhd <- bwu::filter_data(data = adhd, domain = domains, scale = scales)
 ```
 
 ```{r}
-#| label: text-adhd-self
+#| label: text-adhd-observer
 #| cache: true
 #| eval: true
 #| include: false
 
-# Self-report
-data_adhd_self <-
+# Observer-report
+data_adhd_observer <-
   data_adhd |>
-  dplyr::filter(test == "caars_sr" | test == "cefi_sr" | test == "caars2_sr") |>
+  dplyr::filter(test == "caars_or" | test == "cefi_or" | test == "caars2_or") |>
   dplyr::arrange(dplyr::desc(percentile)) |>
   dplyr::distinct(.keep_all = FALSE)
 
 # Flatten the text
-bwu::cat_neuropsych_results(data = data_adhd_self, file = "_02-09_adhd_adult_text_self.qmd")
+bwu::cat_neuropsych_results(data = data_adhd_observer, file = "_02-09_adhd_adult_text_observer.qmd")
 ```
 
-
-
 ```{r}
-#| label: qtbl-adhd-self
+#| label: qtbl-adhd-observer
 #| dev: tikz
 #| fig-process: pdf2png
 #| eval: true
@@ -172,14 +170,14 @@ bwu::cat_neuropsych_results(data = data_adhd_self, file = "_02-09_adhd_adult_tex
 options(tikzDefaultEngine = "xetex")
 
 # table arguments
-pheno <- "adhd_self"
-table_name <- "table_adhd_self"
+pheno <- "adhd_observer"
+table_name <- "table_adhd_observer"
 vertical_padding <- 0
 multiline <- TRUE
 
 # variables
-data_adhd_self <-
-  dplyr::mutate(data_adhd_self, scale = stringr::str_remove_all(scale, "CAARS-SR |CEFI-SR |CAARS2 Self "))
+data_adhd_observer <-
+  dplyr::mutate(data_adhd_observer, scale = stringr::str_remove_all(scale, "CAARS-OR |CEFI-OR |CAARS2 Observer "))
 
 # footnotes
 fn_standard_score <- gt::md("CEFI Standard score: Mean = 100 [50th‰], SD ± 15
@@ -201,34 +199,34 @@ Higher scores reflect reduced functioning.")
 
 # groupings
 grp_adhd <- list(
-  standard_score = c("CEFI Self-Report", "CEFI Observer-Report", "CEFI Self", "CEFI Observer"),
-  t_score = c("CAARS Self-Report", "CAARS Observer-Report", "CAARS-2 Self-Report", "CAARS-2 Observer-Report", "CAARS2 Self", "CAARS2 Observer", "CAARS Self")
+  standard_score = c("CEFI Observer-Report", "CEFI Observer-Report", "CEFI Observer", "CEFI Observer"),
+  t_score = c("CAARS Observer-Report", "CAARS Observer-Report", "CAARS-2 Observer-Report", "CAARS-2 Observer-Report", "CAARS2 Observer", "CAARS2 Observer", "CAARS Observer")
 )
 
 grp_caars <- list(
-  t_score = c("CAARS Self-Report", "CAARS Observer-Report", "CAARS-2 Self-Report", "CAARS-2 Observer-Report", "CAARS2 Self", "CAARS2 Observer", "CAARS Self")
+  t_score = c("CAARS Observer-Report", "CAARS Observer-Report", "CAARS-2 Observer-Report", "CAARS-2 Observer-Report", "CAARS2 Observer", "CAARS2 Observer", "CAARS Observer")
 )
 
 grp_cefi <- list(
-  standard_score = c("CEFI Self-Report", "CEFI Observer-Report", "CEFI Self", "CEFI Observer")
+  standard_score = c("CEFI Observer-Report", "CEFI Observer-Report", "CEFI Observer", "CEFI Observer")
 )
 
-grp_self <- list(
-  standard_score = c("CEFI Self-Report", "CEFI Self"),
-  t_score = c("CAARS Self-Report", "CAARS-2 Self-Report", "CAARS2 Self", "CAARS Self")
+grp_observer <- list(
+  standard_score = c("CEFI Observer-Report", "CEFI Observer"),
+  t_score = c("CAARS Observer-Report", "CAARS-2 Observer-Report", "CAARS2 Observer", "CAARS Observer")
 )
 
 # make `gt` table
 bwu::tbl_gt(
-  data = data_adhd_self,
+  data = data_adhd_observer,
   pheno = pheno,
   table_name = table_name,
   source_note = source_note,
   fn_standard_score = fn_standard_score,
   # fn_t_score = fn_t_score,
-  grp_standard_score = grp_self[["standard_score"]],
-  # grp_t_score = grp_self[["t_score"]],
-  dynamic_grp = grp_self,
+  grp_standard_score = grp_observer[["standard_score"]],
+  # grp_t_score = grp_observer[["t_score"]],
+  dynamic_grp = grp_observer,
   vertical_padding = vertical_padding,
   multiline = multiline
 )
@@ -237,17 +235,17 @@ bwu::tbl_gt(
 
 
 ```{r}
-#| label: fig-adhd-self
+#| label: fig-adhd-observer
 #| include: false
 #| fig-hight: 5
 #| out-height: 100%
-#| fig-cap: "Attention and executive functions are multidimensional concepts that contain several related processes. Both concepts require self-regulatory skills and have some common subprocesses; therefore, it is common to treat them together, or even to refer to both processes when talking about one or the other."
+#| fig-cap: "Attention and executive functions are multidimensional concepts that contain several related processes. Both concepts require observer-regulatory skills and have some common subprocesses; therefore, it is common to treat them together, or even to refer to both processes when talking about one or the other."
 
 # dotplot variables to plot (x, y)
-x <- data_adhd_self$z
-y <- data_adhd_self$scale
+x <- data_adhd_observer$z
+y <- data_adhd_observer$scale
 # dotplot arguments
-filename <- "fig_adhd_self.svg"
+filename <- "fig_adhd_observer.svg"
 colors <- NULL
 return_plot <- TRUE
 
@@ -255,7 +253,7 @@ return_plot <- TRUE
 options(warn = 1) # Set warn to 1 to make warnings not halt execution
 
 bwu::dotplot(
-  data = data_adhd_self,
+  data = data_adhd_observer,
   x = x,
   y = y,
   colors = colors,
@@ -268,10 +266,9 @@ bwu::dotplot(
 options(warn = 0) # Reset to default behavior
 ```
 
-
 ### SELF-REPORT
 
-{{< include _02-09_adhd_adult_text_self.qmd >}}
+{{< include _02-09_adhd_adult_text_observer.qmd >}}
 
 ```{=typst}
 #let domain(title: none, file_qtbl, file_fig) = {
@@ -291,7 +288,7 @@ options(warn = 0) # Reset to default behavior
       [#image(file_fig)],
       caption: figure.caption(
         position: bottom,
-        [Attention and executive functions are multidimensional concepts that contain several related processes. Both concepts require self-regulatory skills and have some common subprocesses; therefore, it is common to treat them together, or even to refer to both processes when talking about one or the other.],
+        [Attention and executive functions are multidimensional concepts that contain several related processes. Both concepts require observer-regulatory skills and have some common subprocesses; therefore, it is common to treat them together, or even to refer to both processes when talking about one or the other.],
       ),
       placement: none,
       kind: "image",
@@ -303,9 +300,9 @@ options(warn = 0) # Reset to default behavior
 ```
 
 ```{=typst}
-#let title = "ADHD/EF Self Ratings"
-#let file_qtbl = "table_adhd_self.png"
-#let file_fig = "fig_adhd_self.svg"
+#let title = "ADHD/EF Observer Ratings"
+#let file_qtbl = "table_adhd_observer.png"
+#let file_fig = "fig_adhd_observer.svg"
 #domain(
   title: [#title],
   file_qtbl,
