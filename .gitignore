@@ -84,4 +84,9 @@ audio/
 .history/
 .Rhistory
 *.code-workspace
-Edward/
+
+# main
+_extensions/
+.history/
+.vscode/
+.src/
