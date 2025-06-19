@@ -61,7 +61,13 @@ motor <- motor |>
 
 # Write the 'motor' data frame to a CSV file
 # The file name is derived from the 'pheno' variable
-readr::write_excel_csv(motor, paste0(pheno, ".csv"), na = "", col_names = TRUE, append = FALSE)
+readr::write_excel_csv(
+  motor,
+  paste0(pheno, ".csv"),
+  na = "",
+  col_names = TRUE,
+  append = FALSE
+)
 ```
 
 ```{r}
@@ -131,7 +137,9 @@ vertical_padding <- 0
 multiline <- TRUE
 
 # footnotes
-fn_scaled_score <- gt::md("Scaled score: Mean = 10 [50th‰], SD ± 3 [16th‰, 84th‰]")
+fn_scaled_score <- gt::md(
+  "Scaled score: Mean = 10 [50th‰], SD ± 3 [16th‰, 84th‰]"
+)
 fn_t_score <- gt::md("T-score: Mean = 50 [50th‰], SD ± 10 [16th‰, 84th‰]")
 
 # Groupings
@@ -191,28 +199,27 @@ options(warn = 0) # Reset to default behavior
 #let domain(title: none, file_qtbl, file_fig) = {
   let font = (font: "Roboto Slab", size: 0.5em)
   set text(..font)
-  pad(top: 0.5em)[]  
-    grid(
-      columns: (50%, 50%),
-      gutter: 8pt,
-        figure([#image(file_qtbl)],
-          caption: figure.caption(position: top, [#title]),
-          kind: "qtbl",
-          supplement: [*Table*],
-          ),
-        figure([#image(file_fig, width: auto)],
-          caption: figure.caption(position: bottom, [
-            Sensorimotor tasks refer to the capacity to control hand movements
-            quickly, smoothly, and with adequate precision, which are required
-            to engage in activities such as writing and drawing.
-            ]),
-          placement: none,
-          kind: "image",
-          supplement: [*Figure*],
-          gap: 0.5em,
-        ),
-      )
-  }
+  pad(top: 0.5em)[]
+  grid(
+    columns: (50%, 50%),
+    gutter: 8pt,
+    figure([#image(file_qtbl)],
+      caption: figure.caption(position: top, [#title]),
+      kind: "qtbl",
+      supplement: [*Table*],
+    ),
+    figure([#image(file_fig, width: auto)],
+      caption: figure.caption(position: bottom, [
+        Sensorimotor tasks refer to the capacity to control hand movements quickly, smoothly, and with adequate precision, which are required
+        to engage in activities such as writing and drawing.
+      ]),
+      placement: none,
+      kind: "image",
+      supplement: [*Figure*],
+      gap: 0.5em,
+    ),
+  )
+}
 ```
 ```{=typst}
 #let title = "Motor"
