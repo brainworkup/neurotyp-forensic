@@ -3,7 +3,7 @@ title: NEUROCOGNITIVE EXAMINATION
 patient: Biggie
 name: Smalls, Biggie
 doe: {{< var doe >}}
-date_of_report: {{< var date_of_report >}}
+date_of_report: last-modified
 ---
 
 ```{r}
@@ -11,23 +11,28 @@ date_of_report: {{< var date_of_report >}}
 #| include: false
 #| cache: false
 
+# Suppress xfun::attr() deprecation warnings
+options(warn = -1)
+
 packages <- c(
   "dplyr",
-  "collapse",
   "glue",
   "gt",
   "here",
   "janitor",
   "knitr",
+  "purrr",
   "quarto",
   "readr",
   "readxl",
   "rmarkdown",
   "snakecase",
+  "stringr",
   "tidytable",
   "vroom",
   "xfun",
-  "bwu"
+  "bwu",
+  "NeurotypR"
 )
 
 # Function to load packages one by one
@@ -44,6 +49,29 @@ load_packages <- function(packages) {
 # Call the function to load packages
 load_packages(packages)
 
+# Apply xfun::attr() deprecation fix after loading xfun
+if (requireNamespace("xfun", quietly = TRUE)) {
+  # Check if attr function exists and patch it
+  if (exists("attr", envir = asNamespace("xfun"))) {
+    tryCatch(
+      {
+        # Temporarily unlock the binding
+        unlockBinding("attr", asNamespace("xfun"))
+        # Replace with attr2
+        assign("attr", xfun::attr2, envir = asNamespace("xfun"))
+        # Lock it back
+        lockBinding("attr", asNamespace("xfun"))
+        message("Applied xfun::attr() deprecation fix")
+      },
+      error = function(e) {
+        message(
+          "Could not patch xfun::attr(), continuing with warnings suppressed"
+        )
+      }
+    )
+  }
+}
+
 # Set knitr options
 knitr::opts_knit$set(
   width = 80,
@@ -53,74 +81,58 @@ knitr::opts_knit$set(
   optipng = knitr::hook_optipng
 )
 
+# Keep warnings suppressed for the rest of the document to avoid xfun::attr issues
+# This is a temporary workaround for the xfun::attr() deprecation warning
+options(warn = -1)
+
 # Set environment variables with default values
-Sys.setenv(PATIENT = "{{< var patient >}}", RETURN_PLOT = TRUE)
+Sys.setenv(PATIENT = "{{< var patient >}}")
 patient <- Sys.getenv("PATIENT")
-return_plot <- Sys.getenv("RETURN_PLOT")
 ```
 
 ```{r}
 #| label: data-load
 #| include: false
 
-file_path <- here::here("data", "csv")
-bwu::load_data(here::here(file_path))
-neurocog <- vroom::vroom("neurocog.csv")
-neurobehav <- vroom::vroom("neurobehav.csv")
-neuropsych <- vroom::vroom("neuropsych.csv")
-validity <- vroom::vroom("validity.csv")
+path_data <- here::here("data")
+path_csv <- here::here("data", "csv")
+NeurotypR::load_data(here::here(path_csv))
+# load_data(here::here(path_csv))
+neurocog <- readr::read_csv("data/neurocog.csv")
+neurobehav <- readr::read_csv("data/neurobehav.csv")
+neuropsych <- readr::read_csv("data/neuropsych.csv")
+validity <- readr::read_csv("data/validity.csv")
 ```
 
 ```{=typst}
 #let name = [{{< var last_name >}}, {{< var first_name >}}]
 #let doe = [{{< var date_of_report >}}]
 #let patient = [{{< var patient >}}]
-#v(2em, weak: true)
-#show block: set par(leading: 0.65em)
+// #v(2em, weak: true)
+// #show block: set par(leading: 0.65em)
 #block[
-*CASE NUMBER*: {{< var case_number >}} \
+*CASE NUMBER:* #case_number \
 *PATIENT NAME:* #name \
 *DATE OF BIRTH:* {{< var dob >}}, Age {{< var age >}} \
-*DATE OF EXAM:* {{< var doe >}}, {{< var doe2 >}} \
+*DATES OF EXAM:* {{< var doe >}}, {{< var doe2 >}}, and {{< var doe3 >}} \
 *DATE OF REPORT*: {{< var date_of_report >}} \
 ]
 ```
 
 {{< include _00-00_tests.qmd >}}
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
-{{< include _01-00_nse_forensic.qmd >}}
+{{< include _01-00_nse_adult.qmd >}}
 
 <!-- {{< pagebreak >}} -->
 
-{{< include _02-00_behav-obs.qmd >}}
+{{< include _02-00_behav_obs.qmd >}}
 
-# NEUROCOGNITIVE FINDINGS {#sec-nt}
 
-{{< include _02-01_iq.qmd >}}
+# NEUROCOGNITIVE FINDINGS
 
-{{< include _02-02_academics.qmd >}}
-
-{{< include _02-03_verbal.qmd >}}
-
-{{< include _02-04_spatial.qmd >}}
-
-{{< include _02-05_memory.qmd >}}
-
-{{< include _02-06_executive.qmd >}}
-
-{{< include _02-12_daily_living.qmd >}}
-
-<!-- {{< include _02-07_motor.qmd >}} -->
-
-<!-- {{< include _02-08_social.qmd >}} -->
-
-{{< include _02-09_adhd_adult.qmd >}}
-
-{{< include _02-10_emotion_adult.qmd >}}
-
-<!-- {{< include _02-11_adaptive.qmd >}} -->
+{{< include _include_domains.qmd >}}
 
 <!-- {{< pagebreak >}} -->
 
@@ -128,10 +140,10 @@ validity <- vroom::vroom("validity.csv")
 
 {{< include _03-00_sirf_text.qmd >}}
 
-{{< include _03-01_recs.qmd >}}
+{{< include _03-01_recommendations.qmd >}}
 
 {{< include _03-02_signature.qmd >}}
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
 {{< include _03-03_appendix.qmd >}}
